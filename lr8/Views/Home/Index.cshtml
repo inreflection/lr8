@@ -1,0 +1,38 @@
+﻿@model List<Product>
+@{
+    Layout = null;
+}
+<div>
+    <h2>List View</h2>
+    <ul>
+        @foreach (var product in Model)
+        {
+            <li>@product.id. @product.name - @product.price$ (@product.createdDate)</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <h2>Table View</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Created Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.id</td>
+                    <td>@product.name</td>
+                    <td>@product.price$</td>
+                    <td>@product.createdDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
